@@ -193,7 +193,7 @@ export default function JournalPanel() {
         </div>
 
         {showHistory ? (
-          <JournalHistory onExpand={setExpanded} />
+          <JournalHistory />
         ) : (
           journalForm(false)
         )}
@@ -235,7 +235,7 @@ export default function JournalPanel() {
   )
 }
 
-function JournalHistory({ onExpand }: { onExpand: (v: boolean) => void }) {
+function JournalHistory() {
   const { entries, fetchEntries } = useJournalStore()
   const [selectedEntry, setSelectedEntry] = useState<string | null>(null)
 
