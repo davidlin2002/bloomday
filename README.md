@@ -3,7 +3,7 @@
 A gamified productivity web app where your tasks grow a living garden. Each task is a seed, focus sessions water it, and completing tasks makes flowers bloom.
 
 Watercolor hand-painted aesthetic. Desktop-first. Built with React + TypeScript + Supabase.
-**Game Url**
+##Game Url
 https://bloomday-one.vercel.app/login
 ## Features
 
