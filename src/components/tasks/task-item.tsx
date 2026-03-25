@@ -87,8 +87,7 @@ export default function TaskItem({ task }: TaskItemProps) {
         </div>
 
         {/* Delete button (top-right, away from action buttons) */}
-        {!isBloomed && (
-          showConfirmDelete ? (
+        {showConfirmDelete ? (
             <div className="flex items-center gap-0.5 shrink-0">
               <button
                 onClick={() => { deleteTask(task.id); setShowConfirmDelete(false) }}
@@ -115,8 +114,7 @@ export default function TaskItem({ task }: TaskItemProps) {
             >
               ✕
             </button>
-          )
-        )}
+          )}
       </div>
 
       {/* Bottom row: action buttons (clearly separated) */}
