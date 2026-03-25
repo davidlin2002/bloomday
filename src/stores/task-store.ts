@@ -87,6 +87,10 @@ export const useTaskStore = create<TaskStore>((set, get) => ({
   },
 
   deleteTask: async (taskId) => {
+    // Delete associated plants first to avoid foreign key constraint
+    await supabase.from('plants').delete().eq('task_id', taskId)
+    await supabase.from('pomodoro_sessions').delete().eq('task_id', taskId)
+
     const { error } = await supabase
       .from('tasks')
       .delete()
@@ -95,6 +99,7 @@ export const useTaskStore = create<TaskStore>((set, get) => ({
     if (error) {
       set({ error: error.message })
     } else {
+      await useGardenStore.getState().fetchPlants()
       await get().fetchTasks()
     }
   },
