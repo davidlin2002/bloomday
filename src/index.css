@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif+TC:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Watercolor palette */
+  --color-cream: #FDF8F0;
+  --color-cream-dark: #F5EDE0;
+  --color-brown: #4A3D2E;
+  --color-brown-light: #8B7E6A;
+  --color-garden: #7A9B4A;
+  --color-garden-light: #C0DD97;
+  --color-water: #85B7EB;
+  --color-water-light: #C0DEFF;
+  --color-bloom: #E8A0B4;
+  --color-bloom-light: #F5D0DC;
+  --color-sunflower: #FAC775;
+  --color-sunflower-light: #FDE4AA;
+  --color-herb: #97C459;
+  --color-herb-light: #C6E49A;
+  --color-lavender: #AFA9EC;
+  --color-lavender-light: #D4D0F8;
+  --color-danger: #D85A30;
+  --color-danger-light: #F0A88E;
+
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Noto Serif TC', 'Georgia', serif;
+}
+
+/* Base styles */
+body {
+  margin: 0;
+  background-color: var(--color-cream);
+  color: var(--color-brown);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  color: var(--color-brown);
+}
+
+/* Dark mode overrides */
+.dark,
+.dark body {
+  background-color: #1a1612;
+  color: #e8dfd4;
+}
+.dark h1, .dark h2, .dark h3, .dark h4 {
+  color: #e8dfd4;
+}
+/* Cards and inputs */
+.dark .bg-white\/60,
+.dark .bg-white\/50,
+.dark .bg-white\/40,
+.dark .bg-white\/30 {
+  background-color: rgba(42, 36, 32, 0.7) !important;
+}
+.dark .bg-cream\/80,
+.dark .bg-cream\/60 {
+  background-color: rgba(30, 26, 22, 0.8) !important;
+}
+.dark .border-cream-dark,
+.dark .border-cream-dark\/50,
+.dark .border-cream-dark\/30 {
+  border-color: rgba(58, 52, 48, 0.8) !important;
+}
+.dark .border-white\/80,
+.dark .border-white\/40 {
+  border-color: rgba(58, 52, 48, 0.5) !important;
+}
+.dark .text-brown {
+  color: #e8dfd4 !important;
+}
+.dark .text-brown-light {
+  color: #a89b8a !important;
+}
+.dark .placeholder-brown-light\/50::placeholder {
+  color: rgba(168, 155, 138, 0.5) !important;
+}
+.dark {
+  --color-cream: #1a1612;
+  --color-cream-dark: #2a2420;
+  --color-brown: #e8dfd4;
+  --color-brown-light: #a89b8a;
+}
+
+/* Watercolor soft scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brown-light);
+  border-radius: 999px;
+  opacity: 0.5;
+}
